@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Trabajos | BTA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <img src="img/logo.png" class="logo">
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="trabajos.html">Trabajos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<section class="contenido centrado">
+  <h2>Nuestros Trabajos</h2>
+  <p class="subtexto">Algunos de nuestros proyectos realizados</p>
+
+  <div class="galeria">
+    <img src="img/trabajo1.jpg">
+    <img src="img/trabajo2.jpg">
+    <img src="img/trabajo3.jpeg">
+    <img src="img/trabajo4.jpg">
+    <img src="img/trabajo5.jpg">
+    <img src="img/trabajo6.jpg">
+    <img src="img/trabajo7.jpg">
+    <img src="img/trabajo8.jpg">
+  </div>
+</section>
+
+<section class="cta">
+  <h2>¿Te gustó lo que viste?</h2>
+  <p>Podemos hacer algo igual o mejor para ti</p>
+
+  <a class="btn grande" href="https://wa.me/526647760913">
+    Cotizar proyecto
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 BTA</p>
+</footer>
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span id="cerrar">&times;</span>
+  <img id="imagen-grande">
+</div>
+
+<script>
+  const imagenes = document.querySelectorAll('.galeria img');
+  const lightbox = document.getElementById('lightbox');
+  const imagenGrande = document.getElementById('imagen-grande');
+  const cerrar = document.getElementById('cerrar');
+
+  imagenes.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      imagenGrande.src = img.src;
+    });
+  });
+
+  // cerrar con X
+  cerrar.onclick = () => {
+    lightbox.style.display = 'none';
+  };
+
+  // cerrar dando click fuera
+  lightbox.onclick = (e) => {
+    if (e.target !== imagenGrande) {
+      lightbox.style.display = 'none';
+    }
+  };
+
+  // cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: white;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #111;
+}
+
+/* LOGO */
+.logo {
+  height: 75px;
+  width: auto;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* NAV */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 0;
+  position: relative;
+}
+
+/* animación línea */
+nav a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #2A3F73;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 60vh;
+  background: url('img/hero.jpg') center bottom / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* sombra fondo */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* 🔥 CUADRO OSCURO PARA TEXTO */
+.overlay {
+  position: relative;
+  z-index: 1;
+  padding: 40px 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 700px;
+}
+
+.overlay h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  opacity: 0.9;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #2A3F73;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background: #3E5A9A;
+}
+
+.btn.grande {
+  font-size: 20px;
+  padding: 20px 40px;
+}
+
+/* SERVICIOS */
+.servicios {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* CARDS */
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  width: 280px;
+  border-radius: 15px;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: #2A3F73;
+}
+
+/* IMÁGENES */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 15px;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}
+
+/* CTA */
+.cta {
+  background: #111;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+}
+
+/* GALERÍA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+/* CENTRAR TEXTO EN TRABAJOS */
+.centrado {
+  text-align: center;
+}
+
+/* SUBTEXTO MÁS PRO */
+.subtexto {
+  color: #ccc;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+/* LIGHTBOX (imagen grande) */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+/* imagen grande */
+#lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  animation: zoom 0.3s ease;
+}
+
+/* botón cerrar */
+#cerrar {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* animación */
+@keyframes zoom {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.galeria img {
+  cursor: pointer;
+}
+/* CONTACTO CENTRADO */
+.contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+}
+
+/* CAJA */
+.contacto-box {
+  background: #1a1a1a;
+  padding: 50px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease;
+}
+
+/* TEXTO */
+.contacto-box h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.subtexto {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* REDES */
+.redes {
+  margin-top: 30px;
+}
+
+.facebook {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2A3F73;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.facebook:hover {
+  color: #3E5A9A;
+}
